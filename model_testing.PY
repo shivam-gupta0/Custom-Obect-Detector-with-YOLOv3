@@ -3,14 +3,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import glob
 
-net = cv2.dnn.readNetFromDarknet('E:\\master_thesis\\project\\vehicle_dataset\\model_test\\yolov3_custom1.cfg', "E:\\master_thesis\\project\\vehicle_dataset\\yolov3_model\\12000_epc\\yolov3_final.weights")
+net = cv2.dnn.readNetFromDarknet('E:\\project\\vehicle_dataset\\model_test\\yolov3_custom1.cfg', "E:\\project\\vehicle_dataset\\yolov3_model\\12000_epc\\yolov3_final.weights")
 print(net)
 net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
 classes = ['car', 'truck', 'bicycle', 'bus', 'pedestrian', 'motor_bike']
 
 
-#images_path = glob.glob("E:\\master_thesis\\project\\vehicle_dataset\\HH_images\*.jpg")
-images_path = glob.glob("E:\\master_thesis\\project\\vehicle_dataset\\new_images\\test_data\*.jpg")
+#images_path = glob.glob("E:\\project\\vehicle_dataset\\HH_images\*.jpg")
+images_path = glob.glob("E:\\project\\vehicle_dataset\\new_images\\test_data\*.jpg")
 #print(images_path[0])
 for img_path in images_path:
     img1 = cv2.imread(img_path, cv2.IMREAD_UNCHANGED)
