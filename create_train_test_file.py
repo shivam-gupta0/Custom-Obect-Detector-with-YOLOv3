@@ -1,7 +1,7 @@
 import os
 import glob
 
-text_files = glob.glob('E:\\master_thesis\\project\\vehicle_dataset\\CUSTOM_DATA_yolo//*.txt')
+text_files = glob.glob('E:\\project\\vehicle_dataset\\CUSTOM_DATA_yolo//*.txt')
 
 car = 0
 truck = 0
@@ -10,7 +10,7 @@ bus = 0
 pedestrian = 0
 motor_bike = 0
 total = 0
-with open('E:\\master_thesis\\project\\vehicle_dataset\\test.txt', 'w') as f:
+with open('E:\\project\\vehicle_dataset\\test.txt', 'w') as f:
     for filename in text_files[:-1]:
         files = open(filename)
         strng_list = files.readlines()
@@ -85,7 +85,7 @@ with open('E:\\master_thesis\\project\\vehicle_dataset\\test.txt', 'w') as f:
             text_files.remove(filename)
             total += 1
 f.close()
-with open('E:\\master_thesis\\project\\vehicle_dataset\\train.txt', 'w') as ff:
+with open('E:\\project\\vehicle_dataset\\train.txt', 'w') as ff:
     for i in text_files:
         if i[41:] != 'CUSTOM_DATA_yolo\classes.txt':
             line = i[41:]
