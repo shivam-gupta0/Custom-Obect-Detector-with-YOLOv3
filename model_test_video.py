@@ -7,19 +7,19 @@ import numpy as np
 
 
 
-net = cv2.dnn.readNetFromDarknet('E:\\master_thesis\\project\\vehicle_dataset\\model_test\\yolov3_custom1.cfg',
-                                 "E:\\master_thesis\\project\\vehicle_dataset\\yolov3_model\\yolov3_final.weights")
+net = cv2.dnn.readNetFromDarknet('E:\\project\\vehicle_dataset\\model_test\\yolov3_custom1.cfg',
+                                 "E:\\project\\vehicle_dataset\\yolov3_model\\yolov3_final.weights")
 classes = ['car', 'truck', 'bicycle', 'bus', 'pedestrian', 'motor_bike']
 # classes = []
-# with open("E:\\master_thesis\\project\\car_yolov3\\yolo_pretrained\\coco.names", 'r') as f:
+# with open("E:\\project\\car_yolov3\\yolo_pretrained\\coco.names", 'r') as f:
 # classes = [line.strip() for line in f.readlines()]
-cap = cv2.VideoCapture("E:\\master_thesis\\project\\vehicle_dataset\\model_test\\3.webm")
+cap = cv2.VideoCapture("E:\\project\\vehicle_dataset\\model_test\\3.webm")
 
 frame_width = int(cap.get(3))
 frame_height = int(cap.get(4))
 
 size = (frame_width, frame_height)
-out = cv2.VideoWriter('E:\\master_thesis\\project\\vehicle_dataset\\model_test\\yolo_output.avi',
+out = cv2.VideoWriter('E:\\project\\vehicle_dataset\\model_test\\yolo_output.avi',
                          cv2.VideoWriter_fourcc(*'MJPG'),
                          10, size)
 while cap.isOpened():
